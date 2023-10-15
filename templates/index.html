@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Genera un resumen</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='tic.png') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='tic.png') }} " class="icon" />
+  <h3>Sistema Experto para la generacion de Resumenes de Articulos Cientificos</h3>
+  <form action="/" method="post">
+    <input type="text" name="titulo" placeholder="Ingresa un titulo" required />
+    <input type="text" name="keywords" placeholder="Ingresa palabras claves, separalas con un punto ('.')" required />
+    <input type="submit" value="Generar resumen" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
