@@ -1,4 +1,4 @@
-from app import ChatApp
+from app import app
 
-if __name__ == "__main__": 
-    ChatApp.run()
+if __name__ == "__main__":
+    app.app.run()

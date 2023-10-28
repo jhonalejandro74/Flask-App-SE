@@ -1,0 +1,12 @@
+<html>
+<h3>Sistema Experto para la generacion de temas de Articulos Cientificos</h3>
+  <form action="/" method="post">
+    <input type="hidden" name="formularioTema" value="true">
+    <input type="text" name="resumen" placeholder="Ingresa un resumen o una idea de tu articulo" required />
+    <input type="text" name="keywords" placeholder="palabras claves relacionadas con tu idea, separalas con una coma (',')" required />
+    <input type="submit" value="Generar un tema" />
+  </form>       
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+  </html>
