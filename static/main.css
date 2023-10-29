@@ -1,79 +1,130 @@
-@font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2) format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-body,
-input {
-  font-size: 16px;
-  line-height: 24px;
-  color: #353740;
-  font-family: "ColfaxAI", Helvetica, sans-serif;
-}
-
+/* Estilos generales para el cuerpo de la página */
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-.icon {
-  width: 90px;
-}
-
-h3 {
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
-  color: #202123;
-  margin: 16px 0 40px;
-}
-
-form {
-  display: flex;
-  width: 70%;
-  flex-direction: column;
-
-}
-
-input[type="text"] {
-
-  padding: 12px 16px;
-  border: 1px solid #10a37f;
-  border-radius: 4px;
-  margin-bottom: 24px;
-}
-
-::placeholder {
-  color: #8e8ea0;
-  opacity: 1;
-}
-
-input[type="submit"] {
-  padding: 12px 0;
-  color: #fff;
-  background-color: #10a37f;
-  border: none;
-  border-radius: 4px;
+/* Estilos para la barra de navegación */
+nav ul {
+  list-style: none;
+  padding: 0;
+  background-color: #3498db;
   text-align: center;
-  cursor: pointer;
+  height: 70px;
+  display: flex;
+  /* Utilizamos flexbox para centrar verticalmente */
+  align-items: center;
+  /* Centramos verticalmente los elementos */
 }
 
-.result {
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Estilo específico para el elemento "Contacto" para alinear a la derecha */
+nav li:last-child {
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
   font-weight: bold;
-  margin-top: 40px;
-  padding-left: 30%;
-  padding-right: 30%;
+  padding: 20px 30px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+/* Estilos para la imagen */
+.icon {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  height: 100px;
+}
+
+/* Estilos para el resultado */
+.result {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Estilos para los formularios (agregar más estilos según sea necesario) */
+#tipoForm {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el encabezado del formulario */
+h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario en general */
+form {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para etiquetas */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de envío */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
 }

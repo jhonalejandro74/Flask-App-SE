@@ -13,16 +13,20 @@
 
 <body>
   <nav>
-   <ul>
-    <li><a href="#" onClick="resumenForm(); return false;" >Generar Resumen</a></li>
-    <li><a href="#" onclick="keywordsForm(); return false;" >Generar Palabras claves</a></li>
-    <li><a href="#" onClick="temaForm(); return false;" >Generar Tema</a></li>
-    <li><a href="#">Contacto</a></li>
-   </ul>
+    <ul>
+      <li><a href="#" onClick="resumenForm(); return false;">Generar Resumen</a></li>
+      <li><a href="#" onclick="keywordsForm(); return false;">Generar Palabras claves</a></li>
+      <li><a href="#" onClick="temaForm(); return false;">Generar Tema</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
   </nav>
   <img src="{{ url_for('static', filename='tic.png') }} " class="icon" />
-  
+
   <div id="tipoForm"> </div>
+
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
 
   <!-- importacion de formularios a travez de Javascript -->
 

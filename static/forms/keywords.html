@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-<h3>Sistema Experto para la generacion de Pablabras claves de Articulos Cientificos</h3>
-  <form action="/" method="post">
-    <input type="hidden" name="formularioKeyword" value="true">
-    <input type="text" name="tema" placeholder="Ingresa un titulo o tema para tu articulo" required />
-    <input type="text" name="resumen" placeholder="Ingresa un resumen o una idea de tu articulo" required />
-    <input type="submit" value="Generar resumen" />
-  </form>       
-  {% if result %}
-  <div class="result">{{ result }}</div>
-  {% endif %}
-  </html>
+<h3>Generador de Pablabras claves de Articulos Cientificos</h3>
+<form action="/" method="post">
+  <label for="tema">Título o tema de tu artículo:</label>
+  <input type="text" name="tema" id="tema" placeholder="Ingresa un título o tema para tu artículo" required />
+
+  <label for="resumen">Resumen o idea de tu artículo:</label>
+  <input type="text" name="resumen" id="resumen" placeholder="Ingresa un resumen o una idea de tu artículo" required />
+
+  <input type="submit" name="formularioKeyword" value="Generar resumen" />
+</form>
+
+</html>
