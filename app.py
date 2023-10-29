@@ -1,15 +1,20 @@
 import openai
+import pandas as pd
 from flask import Flask, render_template, request
 from openAI_MODELS import models
 
 class ChatApp:
     def __init__(self):
         self.app = Flask(__name__)
-        openai.api_key = "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"
+        openai.api_key = "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"
         self.id_Fine_Tune_Resumen = models.resumen_model
         self.id_Fine_Tune_Keywords = models.keywords_model
         self.id_Fine_Tune_Tema = models.tema_model
         self.app.route("/", methods=("GET", "POST"))(self.index)
+
+        self.records = pd.DataFrame(columns=["Timestamp", "FormType", "Request", "Response"])
+        
+
    
     def procesar_Formulario(self,id_Fine_Tune, input_Text):
         response = openai.ChatCompletion.create(
@@ -26,6 +31,15 @@ class ChatApp:
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0)
+        
+        new_record = pd.DataFrame({
+            "Timestamp": [pd.Timestamp.now()],
+            "FormType": [id_Fine_Tune["type"]],
+            "Request": [input_Text],
+            "Response": [response.choices[0].message.content]
+        })
+        self.records = pd.concat([self.records, new_record], ignore_index=True)
+        self.records.to_excel('registros/registros.xlsx', index=False)
         return response.choices[0].message.content
 
 
