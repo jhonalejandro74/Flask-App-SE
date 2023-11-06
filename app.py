@@ -6,7 +6,7 @@ from openAI_MODELS import models
 class ChatApp:
     def __init__(self):
         self.app = Flask(__name__)
-        openai.api_key = "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"
+        openai.api_key = "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"
         self.id_Fine_Tune_Resumen = models.resumen_model
         self.id_Fine_Tune_Keywords = models.keywords_model
         self.id_Fine_Tune_Tema = models.tema_model
